@@ -12,54 +12,83 @@ struct SplashScreen: View {
     
     @State var animationFinished: Bool = false
     @State var animationStarted: Bool = false
+    @State var removeGIF = false
     
     var body: some View {
         
         ZStack {
-            Color("BG")
-                .ignoresSafeArea()
             
-            // Overcome ...
+            HomeScreen()
+            
             ZStack {
                 
-                if animationFinished {
+                Color("BG")
+                    .ignoresSafeArea()
+                
+                if !removeGIF {
                     
-                    // Same extract the first frame and set as launch screen image ...
-                    // Displaying the last frame ...
-                    // you can easlity extract the last frame by ...
-                    Image("logo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                    
-                } else {
-                    
-                    AnimatedImage(url: getLogoURL())
-                    // no use of using loop count to
-                        .aspectRatio(contentMode: .fit)
+                    // Overcome ...
+                    ZStack {
+                        
+                        if animationStarted {
+                            
+                            if animationFinished {
+                                
+                                // Same extract the first frame and set as launch screen image ...
+                                // Displaying the last frame ...
+                                // you can easlity extract the last frame by ...
+                                Image("logo")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                
+                            } else {
+                                
+                                AnimatedImage(url: getLogoURL())
+                                // no use of using loop count to
+                                    .aspectRatio(contentMode: .fit)
+                                
+                            }
+                            
+                        } else {
+                            
+                            // Showing first frame ..
+                            Image("logoStarting")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            
+                        }
+                        
+                    }
+                    .animation(.none, value: animationFinished)
                     
                 }
                 
             }
-            .animation(.none, value: animationFinished)
+            .opacity(animationFinished ? 0 : 1)
             
         }
-        .opacity(animationFinished ? 0 : 1)
         .onAppear {
             
             // Displaying initial start ...
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 
-            }
-            
-            // This gif will take time to complete = 1.2s
-            // use online tool to calculate the time seconds ...
-            // So closing the splash screen after 1.5s
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                animationStarted = true
                 
-                // Animation has some problems that triggering the girf to reanimate again ...
-                withAnimation(.easeInOut(duration: 0.7)) {
-                    animationFinished = true
+                // This gif will take time to complete = 1.2s
+                // use online tool to calculate the time seconds ...
+                // So closing the splash screen after 1.5s
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    
+                    // Animation has some problems that triggering the girf to reanimate again ...
+                    withAnimation(.easeInOut(duration: 0.7)) {
+                        animationFinished = true
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        removeGIF = true
+                    }
+                    
                 }
                 
             }
