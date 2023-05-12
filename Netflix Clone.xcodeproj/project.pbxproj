@@ -11,9 +11,9 @@
 		0952436B2A0E13F60013D62E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952436A2A0E13F60013D62E /* ContentView.swift */; };
 		0952436D2A0E13FB0013D62E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0952436C2A0E13FB0013D62E /* Assets.xcassets */; };
 		095243702A0E13FB0013D62E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0952436F2A0E13FB0013D62E /* Preview Assets.xcassets */; };
-		0952437B2A0E175D0013D62E /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0952437A2A0E175D0013D62E /* logo.gif */; };
 		0952437E2A0E178D0013D62E /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952437D2A0E178D0013D62E /* SplashScreen.swift */; };
 		095243812A0E17D70013D62E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 095243802A0E17D70013D62E /* SDWebImageSwiftUI */; };
+		095243842A0E2A070013D62E /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 095243832A0E2A060013D62E /* logo.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +22,9 @@
 		0952436A2A0E13F60013D62E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0952436C2A0E13FB0013D62E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0952436F2A0E13FB0013D62E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0952437A2A0E175D0013D62E /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
 		0952437D2A0E178D0013D62E /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		095243822A0E1A560013D62E /* Netflix-Clone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Netflix-Clone-Info.plist"; sourceTree = SOURCE_ROOT; };
+		095243832A0E2A060013D62E /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +58,9 @@
 		095243672A0E13F60013D62E /* Netflix Clone */ = {
 			isa = PBXGroup;
 			children = (
+				095243832A0E2A060013D62E /* logo.gif */,
+				095243822A0E1A560013D62E /* Netflix-Clone-Info.plist */,
 				0952437C2A0E177A0013D62E /* Views */,
-				0952437A2A0E175D0013D62E /* logo.gif */,
 				095243682A0E13F60013D62E /* Netflix_CloneApp.swift */,
 				0952436A2A0E13F60013D62E /* ContentView.swift */,
 				0952436C2A0E13FB0013D62E /* Assets.xcassets */,
@@ -148,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				095243702A0E13FB0013D62E /* Preview Assets.xcassets in Resources */,
-				0952437B2A0E175D0013D62E /* logo.gif in Resources */,
+				095243842A0E2A070013D62E /* logo.gif in Resources */,
 				0952436D2A0E13FB0013D62E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,9 +297,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Netflix Clone/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Netflix-Clone-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -324,9 +326,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Netflix Clone/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Netflix-Clone-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
