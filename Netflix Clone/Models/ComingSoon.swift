@@ -28,14 +28,14 @@ var comingSoonItems: [ComingSoon] = [
 
 var favorites: [ComingSoon] = [
 
-    ComingSoon(appName: "LEGO Brawls", appDescription: "Battle with friends online", appLogo: "Logo1", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster1"),
-    ComingSoon(appName: "LEGO Brawls", appDescription: "Battle with friends online", appLogo: "Logo2", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster2"),
-    ComingSoon(appName: "LEGO Brawls", appDescription: "Battle with friends online", appLogo: "Logo1", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster3"),
-    ComingSoon(appName: "LEGO Brawls", appDescription: "Battle with friends online", appLogo: "Logo2", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster4"),
-    ComingSoon(appName: "LEGO Brawls", appDescription: "Battle with friends online", appLogo: "Logo1", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster5"),
-    ComingSoon(appName: "LEGO Brawls", appDescription: "Battle with friends online", appLogo: "Logo2", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster6"),
-    ComingSoon(appName: "LEGO Brawls", appDescription: "Battle with friends online", appLogo: "Logo1", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster7"),
-    ComingSoon(appName: "LEGO Brawls", appDescription: "Battle with friends online", appLogo: "Logo2", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster8"),
+    ComingSoon(appName: "1", appDescription: "Battle with friends online", appLogo: "Logo1", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster1"),
+    ComingSoon(appName: "2", appDescription: "Battle with friends online", appLogo: "Logo2", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster2"),
+    ComingSoon(appName: "3", appDescription: "Battle with friends online", appLogo: "Logo1", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster3"),
+    ComingSoon(appName: "4", appDescription: "Battle with friends online", appLogo: "Logo2", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster4"),
+    ComingSoon(appName: "5", appDescription: "Battle with friends online", appLogo: "Logo1", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster5"),
+    ComingSoon(appName: "6", appDescription: "Battle with friends online", appLogo: "Logo2", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster6"),
+    ComingSoon(appName: "7", appDescription: "Battle with friends online", appLogo: "Logo1", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster7"),
+    ComingSoon(appName: "8", appDescription: "Battle with friends online", appLogo: "Logo2", bannerTitle: "Smash your rivals in LEGO Brawls", platformTitle: "Apple Arcade", artwork: "poster8"),
     
 
 ]

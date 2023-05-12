@@ -22,10 +22,15 @@ struct TabBar: View {
             
             TabView(selection: $selectedTab) {
                 
-                HomeView()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .tag(tabs[0])
-                    .background(Color("BG").ignoresSafeArea())
+                GeometryReader {
+                    let safeArea = $0.safeAreaInsets
+                    let size = $0.size
+                    
+                    HomeView(safeArea: safeArea, size: size)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .tag(tabs[0])
+                        .background(Color("BG").ignoresSafeArea(.container, edges: .top))
+                }
                 
                 Text("Explore")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
