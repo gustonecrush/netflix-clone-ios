@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+var tabs = ["circle.grid.2x2", "magnifyingglass", "play.tv", "arrow.down.circle", "person"]
+
 struct TabBar: View {
     
     @Binding var selectedTab: String
@@ -16,32 +18,65 @@ struct TabBar: View {
     
     var body: some View {
         
-        HStack(spacing: 0, content: {
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             
-            // Tab Bar Buttons
-            TabBarButton(image: "circle.grid.2x2", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            
-            TabBarButton(image: "magnifyingglass", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            
-            TabBarButton(image: "play.tv", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            
-            TabBarButton(image: "arrow.down.circle", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            
-            TabBarButton(image: "person", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            
-        })
-            .padding()
-            .background(Color("BGNavigation").clipShape(TabCurve(tabPoint: getCurvePoint() - 15)))
-            .overlay (
-                Circle()
-                    .fill(Color("Red"))
-                    .frame(width: 10, height: 10)
-                    .offset(x: getCurvePoint() - 20)
+            TabView(selection: $selectedTab) {
                 
-                ,alignment: .bottomLeading
-            )
-            .cornerRadius(30)
-            .padding(.horizontal)
+                HomeView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .tag(tabs[0])
+                    .background(Color("BG").ignoresSafeArea())
+                
+                Text("Explore")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .tag(tabs[1])
+                    .background(Color("BG").ignoresSafeArea())
+                
+                Text("Coming Soon")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .tag(tabs[2])
+                    .background(Color("BG").ignoresSafeArea())
+                
+                Text("Downloads")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .tag(tabs[3])
+                    .background(Color("BG").ignoresSafeArea())
+                
+                Text("Profile")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .tag(tabs[4])
+                    .background(Color("BG").ignoresSafeArea())
+                
+            }
+            
+            HStack(spacing: 0, content: {
+                
+                // Tab Bar Buttons
+                TabBarButton(image: "circle.grid.2x2", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                
+                TabBarButton(image: "magnifyingglass", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                
+                TabBarButton(image: "play.tv", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                
+                TabBarButton(image: "arrow.down.circle", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                
+                TabBarButton(image: "person", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                
+            })
+                .padding()
+                .background(Color("BGNavigation").clipShape(TabCurve(tabPoint: getCurvePoint() - 15)))
+                .overlay (
+                    Circle()
+                        .fill(Color("Red"))
+                        .frame(width: 10, height: 10)
+                        .offset(x: getCurvePoint() - 20)
+                    
+                    ,alignment: .bottomLeading
+                )
+                .cornerRadius(30)
+                .padding(.horizontal)
+            
+        }
         
     }
     
