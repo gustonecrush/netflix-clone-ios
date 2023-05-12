@@ -32,7 +32,7 @@ struct TabBar: View {
                     .tag(tabs[1])
                     .background(Color("BG").ignoresSafeArea())
                 
-                Text("Coming Soon")
+                ComingSoonView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .tag(tabs[2])
                     .background(Color("BG").ignoresSafeArea())

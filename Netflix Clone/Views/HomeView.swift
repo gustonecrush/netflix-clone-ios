@@ -8,48 +8,117 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-    let viewModel = HomeViewModel()
-    
     var body: some View {
-        NavigationView {
+        
+        ScrollView(.vertical, showsIndicators: false) {
+            
             ZStack {
-                Color("BG")
-                    .ignoresSafeArea(.all)
+                Image("Hero")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 550)
+            }
+            
+            // MARK: Watch List
+            VStack(spacing: 3) {
                 
-                ScrollView {
-                    LazyVStack {
-                        ZStack {
-                            // TODO: - Top Movie
-                        }
+                HStack(alignment: .bottom) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Watch List")
+                            .font(.title2.bold())
                     }
-                    
-                    ForEach(viewModel.allCategories, id: \.self) { category in
-                        VStack {
-                            HStack {
-                                Text(category)
-                                Spacer()
-                            }
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                
-                                LazyHStack {
-                                    
-                                    ForEach(viewModel.getMoviesByCategory(category: category)) { movie in
-                                        
-                                        // TODO: - Widget
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                        }
-                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
+                .padding(.horizontal, 25)
+                .padding(.bottom, -1)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 15) {
+                        ForEach(favorites) { item in
+                            CardView(item: item)
+                        }
+                    }
+                    .padding(.horizontal, 25)
+                }
+                
+            }
+            .padding(.top, -130)
+            
+            // MARK: 10 Trending
+            VStack(spacing: 3) {
+                
+                HStack(alignment: .bottom) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Top 10 Movies Today")
+                            .font(.title2.bold())
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .padding(.horizontal, 25)
+                .padding(.bottom, -1)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        ForEach(trendings) { item in
+                            TrendingCard(item: item)
+                        }
+                    }
+                    .padding(.horizontal, 25)
+                }
+                
+            }
+            .padding(.top, 25)
+            
+        }
+        .padding(.bottom)
+        .background(Color("BG"))
+        .preferredColorScheme(.dark)
+        .ignoresSafeArea()
+        
+    }
+    
+    // MARK: CardView
+    @ViewBuilder
+    func CardView(item: ComingSoon) -> some View {
+        VStack(alignment: .leading, spacing: 15) {
+            ZStack(alignment: .topLeading) {
+                // Banner Image
+                GeometryReader { proxy in
+                    let size = proxy.size
+                    
+                    Image(item.artwork)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: size.width, height: size.height)
+                        .cornerRadius(10)
+                        .clipped()
+                }
+                .frame(width: 350, height: 200)
             }
         }
     }
+    
+    // MARK: CardView
+    @ViewBuilder
+    func TrendingCard(item: ComingSoon) -> some View {
+        VStack(alignment: .leading, spacing: 15) {
+            ZStack(alignment: .topLeading) {
+                // Banner Image
+                GeometryReader { proxy in
+                    let size = proxy.size
+                    
+                    Image(item.artwork)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: size.width, height: size.height)
+                        .cornerRadius(10)
+                        .clipped()
+                }
+                .frame(width: 200, height: 200)
+            }
+        }
+    }
+    
 }
 
 struct HomeView_Previews: PreviewProvider {

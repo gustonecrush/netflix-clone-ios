@@ -17,11 +17,9 @@
 		095243862A0E33850013D62E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095243852A0E33850013D62E /* HomeScreen.swift */; };
 		095243892A0E49280013D62E /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095243882A0E49280013D62E /* TabBar.swift */; };
 		0952438B2A0E4EC80013D62E /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952438A2A0E4EC80013D62E /* TabCurve.swift */; };
-		0952438D2A0E63990013D62E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952438C2A0E63990013D62E /* HomeView.swift */; };
-		095243902A0E63D60013D62E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952438F2A0E63D60013D62E /* HomeViewModel.swift */; };
-		095243932A0E64AF0013D62E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095243922A0E64AF0013D62E /* Movie.swift */; };
-		095243962A0E661B0013D62E /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095243952A0E661B0013D62E /* Global.swift */; };
-		095243982A0E698E0013D62E /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095243972A0E698E0013D62E /* Widget.swift */; };
+		0952439A2A0E81550013D62E /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095243992A0E81540013D62E /* ComingSoonView.swift */; };
+		0952439D2A0E85740013D62E /* ComingSoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952439C2A0E85740013D62E /* ComingSoon.swift */; };
+		0952439F2A0E92190013D62E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952439E2A0E92180013D62E /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,11 +34,9 @@
 		095243852A0E33850013D62E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		095243882A0E49280013D62E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		0952438A2A0E4EC80013D62E /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
-		0952438C2A0E63990013D62E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		0952438F2A0E63D60013D62E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		095243922A0E64AF0013D62E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		095243952A0E661B0013D62E /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		095243972A0E698E0013D62E /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
+		095243992A0E81540013D62E /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
+		0952439C2A0E85740013D62E /* ComingSoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoon.swift; sourceTree = "<group>"; };
+		0952439E2A0E92180013D62E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +72,7 @@
 			children = (
 				095243832A0E2A060013D62E /* logo.gif */,
 				095243822A0E1A560013D62E /* Netflix-Clone-Info.plist */,
-				095243942A0E660B0013D62E /* Helpers */,
-				095243912A0E649F0013D62E /* Models */,
-				0952438E2A0E63BE0013D62E /* ViewModel */,
+				0952439B2A0E85570013D62E /* Models */,
 				0952437C2A0E177A0013D62E /* Views */,
 				095243682A0E13F60013D62E /* Netflix_CloneApp.swift */,
 				0952436A2A0E13F60013D62E /* ContentView.swift */,
@@ -102,7 +96,8 @@
 				095243872A0E49160013D62E /* Components */,
 				0952437D2A0E178D0013D62E /* SplashScreen.swift */,
 				095243852A0E33850013D62E /* HomeScreen.swift */,
-				0952438C2A0E63990013D62E /* HomeView.swift */,
+				095243992A0E81540013D62E /* ComingSoonView.swift */,
+				0952439E2A0E92180013D62E /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,33 +107,16 @@
 			children = (
 				095243882A0E49280013D62E /* TabBar.swift */,
 				0952438A2A0E4EC80013D62E /* TabCurve.swift */,
-				095243972A0E698E0013D62E /* Widget.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		0952438E2A0E63BE0013D62E /* ViewModel */ = {
+		0952439B2A0E85570013D62E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0952438F2A0E63D60013D62E /* HomeViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		095243912A0E649F0013D62E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				095243922A0E64AF0013D62E /* Movie.swift */,
+				0952439C2A0E85740013D62E /* ComingSoon.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		095243942A0E660B0013D62E /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				095243952A0E661B0013D62E /* Global.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,17 +196,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0952439F2A0E92190013D62E /* HomeView.swift in Sources */,
 				095243862A0E33850013D62E /* HomeScreen.swift in Sources */,
-				095243982A0E698E0013D62E /* Widget.swift in Sources */,
-				0952438D2A0E63990013D62E /* HomeView.swift in Sources */,
-				095243932A0E64AF0013D62E /* Movie.swift in Sources */,
 				0952438B2A0E4EC80013D62E /* TabCurve.swift in Sources */,
-				095243902A0E63D60013D62E /* HomeViewModel.swift in Sources */,
 				0952437E2A0E178D0013D62E /* SplashScreen.swift in Sources */,
+				0952439A2A0E81550013D62E /* ComingSoonView.swift in Sources */,
 				0952436B2A0E13F60013D62E /* ContentView.swift in Sources */,
 				095243692A0E13F60013D62E /* Netflix_CloneApp.swift in Sources */,
-				095243962A0E661B0013D62E /* Global.swift in Sources */,
 				095243892A0E49280013D62E /* TabBar.swift in Sources */,
+				0952439D2A0E85740013D62E /* ComingSoon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
