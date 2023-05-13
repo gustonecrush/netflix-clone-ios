@@ -13,8 +13,12 @@ struct HomeView: View {
     var safeArea: EdgeInsets
     var size: CGSize
     
+    @StateObject var videoManager = VideoManager()
+    
     @State var showSheet: Bool = false
     @State var movie: ComingSoon = comingSoonItems[0]
+    @StateObject private var movieDetailState = MovieDetailState()
+    @State private var selectedTrailerURL: URL?
     
     var body: some View {
         
@@ -80,12 +84,12 @@ struct HomeView: View {
                 }
                 .padding(.top, 25)
                 
-                // MARK: 10 Trending
+                // MARK: Korean Drama
                 VStack(spacing: 3) {
                     
                     HStack(alignment: .bottom) {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("Top 10 Movies Today")
+                            Text("Korean Drama")
                                 .font(.title2.bold())
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -94,9 +98,13 @@ struct HomeView: View {
                     .padding(.bottom, -1)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 10) {
-                            ForEach(trendings) { item in
-                                TrendingCard(item: item)
+                        HStack(spacing: 15) {
+                            ForEach(drakors) { item in
+                                CardView(item: item)
+                                    .onTapGesture {
+                                        showSheet.toggle()
+                                        movie = item
+                                    }
                             }
                         }
                         .padding(.horizontal, 25)
@@ -105,12 +113,12 @@ struct HomeView: View {
                 }
                 .padding(.top, 25)
                 
-                // MARK: 10 Trending
+                // MARK: Anime
                 VStack(spacing: 3) {
                     
                     HStack(alignment: .bottom) {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("Top 10 Movies Today")
+                            Text("Animes")
                                 .font(.title2.bold())
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -119,9 +127,13 @@ struct HomeView: View {
                     .padding(.bottom, -1)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 10) {
-                            ForEach(trendings) { item in
-                                TrendingCard(item: item)
+                        HStack(spacing: 15) {
+                            ForEach(animes) { item in
+                                CardView(item: item)
+                                    .onTapGesture {
+                                        showSheet.toggle()
+                                        movie = item
+                                    }
                             }
                         }
                         .padding(.horizontal, 25)
@@ -129,11 +141,11 @@ struct HomeView: View {
                     
                 }
                 .padding(.top, 25)
+                .padding(.bottom, 80)
                 
             }
             .padding(.bottom)
             .background(Color("BG"))
-            .preferredColorScheme(.dark)
             .overlay(alignment: .top) {
                 HeaderView()
             }
@@ -146,24 +158,22 @@ struct HomeView: View {
                 ZStack {
                     Color("BG")
                     
-                    VStack {
-                        Text(movie.appName)
-                            .font(.title.bold())
-                            .foregroundColor(.white)
-                        
-                        Button {
-                            showSheet.toggle()
-                        } label: {
-                            Text("Close from sheet")
-                                .foregroundColor(.white)
-                        }
-                        .padding()
-                    }
+//                    VStack {
+//                        Button {
+//                            showSheet.toggle()
+//                        } label: {
+//                            Text("Close from sheet")
+//                                .foregroundColor(.white)
+//                        }
+//                        .padding()
+//                    }
+                    
                 }
                 .ignoresSafeArea()
             } onEnd: {
                 print("Dismissed")
             }
+            .preferredColorScheme(.dark)
             
         }
         
@@ -394,5 +404,19 @@ class CustomHostingController<Content: View>: UIHostingController<Content> {
             
         }
         
+    }
+}
+
+struct MovieDetailImageHome: View {
+    
+    let imageURL: String
+    
+    var body: some View {
+        ZStack {
+            Color.gray.opacity(0.3)
+                Image(imageURL)
+                    .resizable()
+        }
+        .aspectRatio(16/9, contentMode: .fit)
     }
 }

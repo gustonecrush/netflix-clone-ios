@@ -32,7 +32,8 @@ struct TabBar: View {
                         .background(Color("BG").ignoresSafeArea(.container, edges: .top))
                 }
                 
-                Text("Explore")
+                NavigationView { SearchView() }
+                    .tabItem { Label("", systemImage: "magnifyingglass")}
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .tag(tabs[1])
                     .background(Color("BG").ignoresSafeArea())
@@ -47,7 +48,7 @@ struct TabBar: View {
                     .tag(tabs[3])
                     .background(Color("BG").ignoresSafeArea())
                 
-                Text("Profile")
+                ProfileView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .tag(tabs[4])
                     .background(Color("BG").ignoresSafeArea())
@@ -69,7 +70,7 @@ struct TabBar: View {
                 
             })
                 .padding()
-                .background(Color("BGNavigation").clipShape(TabCurve(tabPoint: getCurvePoint() - 15)))
+                .background(Color("BG").clipShape(TabCurve(tabPoint: getCurvePoint() - 15)))
                 .overlay (
                     Circle()
                         .fill(Color("Red"))
