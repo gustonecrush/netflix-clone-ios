@@ -20,6 +20,11 @@ struct HomeView: View {
     @StateObject private var movieDetailState = MovieDetailState()
     @State private var selectedTrailerURL: URL?
     
+    @State var myList: [ComingSoon] = favorites
+    
+    // MARK: Custom Button Properties
+    @State private var isLiked: [Bool] = [false, false, false]
+    
     var body: some View {
         
         NavigationView {
@@ -45,7 +50,7 @@ struct HomeView: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 15) {
-                            ForEach(favorites) { item in
+                            ForEach(myList) { item in
                                 CardView(item: item)
                                     .onTapGesture {
                                         showSheet.toggle()
@@ -158,15 +163,46 @@ struct HomeView: View {
                 ZStack {
                     Color("BG")
                     
-//                    VStack {
-//                        Button {
-//                            showSheet.toggle()
-//                        } label: {
-//                            Text("Close from sheet")
-//                                .foregroundColor(.white)
-//                        }
-//                        .padding()
-//                    }
+                    VStack(alignment: .leading) {
+                        
+                        Image(movie.artwork)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 350, height: 250)
+                            .cornerRadius(15)
+                            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                            .listRowSeparator(.hidden)
+                            .padding(.top, -25)
+                            .padding(.bottom, -10)
+                        
+                        Text("\(movie.appName) • \(movie.genre) • \(movie.duration)")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                        
+                        HStack(spacing: 20) {
+                            
+                            // MARK: Like Button
+                            CustomButton(systemImage: "suit.heart.fill", status: isLiked[0], activeTint: .pink, inActiveTint: .gray) {
+                                isLiked[0].toggle()
+                            }
+                            
+                            // MARK: Favorite Button
+                            CustomButton(systemImage: "star.fill", status: isLiked[1], activeTint: .yellow, inActiveTint: .gray) {
+                                isLiked[1].toggle()
+                            }
+                            
+                            // MARK: Share Button
+                            CustomButton(systemImage: "square.and.arrow.up.fill", status: isLiked[2], activeTint: .blue, inActiveTint: .gray) {
+                                isLiked[2].toggle()
+                            }
+                            
+                        }
+                        
+                        Text(movie.appDescription)
+                            .foregroundColor(.white)
+                        
+                    }
+                    .padding(.horizontal, 25)
                     
                 }
                 .ignoresSafeArea()
@@ -193,6 +229,33 @@ struct HomeView: View {
             .frame(maxWidth: .infinity)
             
         }
+    }
+    
+    // MARK: Custom Button View
+    @ViewBuilder
+    func CustomButton(systemImage: String, status: Bool, activeTint: Color, inActiveTint: Color, onTap: @escaping () -> ()) -> some View {
+        
+            Button(action: onTap) {
+                
+                Image(systemName: systemImage)
+                    .font(.title2)
+                    .particleEffect(
+                        systemImage: systemImage,
+                        font: .title2,
+                        status: status,
+                        activeTint: activeTint,
+                        inActiveTint: inActiveTint
+                    )
+                    .foregroundColor(status ? activeTint : inActiveTint)
+                    .padding(.horizontal, 18)
+                    .padding(.vertical, 8)
+                    .background {
+                        Capsule()
+                            .fill(status ? activeTint.opacity(0.25) : Color("ButtonColor"))
+                    }
+                
+            }
+        
     }
     
     // MARK: HeaderView

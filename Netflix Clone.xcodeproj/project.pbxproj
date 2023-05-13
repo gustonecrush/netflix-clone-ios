@@ -22,6 +22,8 @@
 		0952439F2A0E92190013D62E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952439E2A0E92180013D62E /* HomeView.swift */; };
 		097100E52A0F5F0C00FCDE4D /* MovieUpcomingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097100E42A0F5F0C00FCDE4D /* MovieUpcomingState.swift */; };
 		097100E72A0F5F5600FCDE4D /* MovieSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097100E62A0F5F5600FCDE4D /* MovieSection.swift */; };
+		098593562A0F995700AA5E8B /* ParticleEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098593552A0F995700AA5E8B /* ParticleEffect.swift */; };
+		098593582A0F997300AA5E8B /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098593572A0F997300AA5E8B /* Particle.swift */; };
 		09D0A0D12A0EC63E009CB7FA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0A0D02A0EC63E009CB7FA /* ProfileView.swift */; };
 		09D0A0D32A0ECB80009CB7FA /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0A0D22A0ECB7F009CB7FA /* VideoManager.swift */; };
 		09D0A0D52A0ECBCF009CB7FA /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0A0D42A0ECBCF009CB7FA /* VideoView.swift */; };
@@ -68,6 +70,8 @@
 		0952439E2A0E92180013D62E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		097100E42A0F5F0C00FCDE4D /* MovieUpcomingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieUpcomingState.swift; sourceTree = "<group>"; };
 		097100E62A0F5F5600FCDE4D /* MovieSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSection.swift; sourceTree = "<group>"; };
+		098593552A0F995700AA5E8B /* ParticleEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEffect.swift; sourceTree = "<group>"; };
+		098593572A0F997300AA5E8B /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 		09D0A0D02A0EC63E009CB7FA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		09D0A0D22A0ECB7F009CB7FA /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
 		09D0A0D42A0ECBCF009CB7FA /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
@@ -128,9 +132,9 @@
 		095243672A0E13F60013D62E /* Netflix Clone */ = {
 			isa = PBXGroup;
 			children = (
-				09D0A0F22A0F391D009CB7FA /* Bindings */,
 				095243832A0E2A060013D62E /* logo.gif */,
 				095243822A0E1A560013D62E /* Netflix-Clone-Info.plist */,
+				09D0A0F22A0F391D009CB7FA /* Bindings */,
 				09D0A0E72A0F3429009CB7FA /* Resources */,
 				09D0A0DE2A0F28A0009CB7FA /* Services */,
 				0952439B2A0E85570013D62E /* Models */,
@@ -183,6 +187,7 @@
 				09D0A0DA2A0F2320009CB7FA /* SearchState.swift */,
 				09D0A0F02A0F38C0009CB7FA /* ActivityIndicator.swift */,
 				09D0A10B2A0F55D7009CB7FA /* CustomCarousel.swift */,
+				098593552A0F995700AA5E8B /* ParticleEffect.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				09D0A0E52A0F341F009CB7FA /* Movie+Stub.swift */,
 				09D0A0F52A0F3960009CB7FA /* DataFetchPhase.swift */,
 				097100E62A0F5F5600FCDE4D /* MovieSection.swift */,
+				098593572A0F997300AA5E8B /* Particle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				095243862A0E33850013D62E /* HomeScreen.swift in Sources */,
 				09D0A0D12A0EC63E009CB7FA /* ProfileView.swift in Sources */,
 				0952438B2A0E4EC80013D62E /* TabCurve.swift in Sources */,
+				098593582A0F997300AA5E8B /* Particle.swift in Sources */,
 				09D0A0EF2A0F3890009CB7FA /* LoadingView.swift in Sources */,
 				0952437E2A0E178D0013D62E /* SplashScreen.swift in Sources */,
 				09D0A0DD2A0F2832009CB7FA /* Movie.swift in Sources */,
@@ -330,6 +337,7 @@
 				09D0A1022A0F3F59009CB7FA /* ImageLoader.swift in Sources */,
 				09D0A0F62A0F3960009CB7FA /* DataFetchPhase.swift in Sources */,
 				09D0A0E22A0F2CBD009CB7FA /* MovieStore.swift in Sources */,
+				098593562A0F995700AA5E8B /* ParticleEffect.swift in Sources */,
 				09D0A0D72A0F215C009CB7FA /* SearchView.swift in Sources */,
 				09D0A0D32A0ECB80009CB7FA /* VideoManager.swift in Sources */,
 				09D0A0FE2A0F3C08009CB7FA /* RetryView.swift in Sources */,

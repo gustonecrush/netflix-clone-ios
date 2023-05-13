@@ -8,33 +8,55 @@
 import SwiftUI
 
 struct ProfileView: View {
+    // MARK: Custom Button Properties
+    @State private var isLiked: [Bool] = [false, false, false]
+    
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    Image("user")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 130, height: 130)
-                        .padding(22)
-                        .padding(.top, 50)
-                        .cornerRadius(25)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                
-                VStack {
-                    Text("Gustonecrush")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .offset(x: 35, y: -40)
-                    
-                    Text("")
-                }
+        HStack(spacing: 20) {
+            
+            // MARK: Like Button
+            CustomButton(systemImage: "suit.heart.fill", status: isLiked[0], activeTint: .pink, inActiveTint: .gray) {
+                isLiked[0].toggle()
             }
-            .navigationBarHidden(true)
-            .preferredColorScheme(.dark)
-            .edgesIgnoringSafeArea([.top, .bottom])
+            
+            // MARK: Favorite Button
+            CustomButton(systemImage: "star.fill", status: isLiked[1], activeTint: .yellow, inActiveTint: .gray) {
+                isLiked[1].toggle()
+            }
+            
+            // MARK: Share Button
+            CustomButton(systemImage: "square.and.arrow.up.fill", status: isLiked[2], activeTint: .blue, inActiveTint: .gray) {
+                isLiked[2].toggle()
+            }
+            
         }
+    }
+    
+    // MARK: Custom Button View
+    @ViewBuilder
+    func CustomButton(systemImage: String, status: Bool, activeTint: Color, inActiveTint: Color, onTap: @escaping () -> ()) -> some View {
+        
+        Button(action: onTap) {
+            
+            Image(systemName: systemImage)
+                .font(.title2)
+                .particleEffect(
+                    systemImage: systemImage,
+                    font: .title2,
+                    status: status,
+                    activeTint: activeTint,
+                    inActiveTint: inActiveTint
+                )
+                .foregroundColor(status ? activeTint : inActiveTint)
+                .padding(.horizontal, 18)
+                .padding(.vertical, 8)
+                .background {
+                    Capsule()
+                        .fill(status ? activeTint.opacity(0.25) : Color("ButtonColor"))
+                }
+            
+        }
+        
     }
 }
 
@@ -43,3 +65,4 @@ struct ProfileView_Previews: PreviewProvider {
         ProfileView()
     }
 }
+

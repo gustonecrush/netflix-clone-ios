@@ -37,7 +37,7 @@ struct CustomCarousel<Content: View, Item, ID>: View where Item: RandomAccessCol
     @State var rotation: Double = 0
     var body: some View {
         GeometryReader { proxy in
-            var size = proxy.size
+            let size = proxy.size
             
             // MARK: Reduced after applying card spacing & padding
             let cardWidth = size.width - (cardPadding - spacing)

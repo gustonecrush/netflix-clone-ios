@@ -45,10 +45,40 @@ struct MovieDetailListView: View {
     let movie: Movie
     @Binding var selectedTrailerURL: URL?
     
+    // MARK: Custom Button Properties
+    @State var isLiked: [Bool] = [false, false, false]
+    
     var body: some View {
         movieDescriptionSection.listRowSeparator(.visible)
         movieCastSection.listRowSeparator(.hidden)
         movieTrailerSection
+    }
+    
+    // MARK: Custom Button View
+    @ViewBuilder
+    func CustomButton(systemImage: String, status: Bool, activeTint: Color, inActiveTint: Color, onTap: @escaping () -> ()) -> some View {
+        
+        Button(action: onTap) {
+            
+            Image(systemName: systemImage)
+                .font(.title2)
+                .particleEffect(
+                    systemImage: systemImage,
+                    font: .title2,
+                    status: status,
+                    activeTint: activeTint,
+                    inActiveTint: inActiveTint
+                )
+                .foregroundColor(status ? activeTint : inActiveTint)
+                .padding(.horizontal, 18)
+                .padding(.vertical, 8)
+                .background {
+                    Capsule()
+                        .fill(status ? activeTint.opacity(0.25) : Color("ButtonColor"))
+                }
+            
+        }
+        
     }
     
     private var movieDescriptionSection: some View {
